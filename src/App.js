@@ -1,5 +1,7 @@
 function App() {
-  return <App></App>
+  return ( 
+      <div></div>
+      )
 
 }
 
