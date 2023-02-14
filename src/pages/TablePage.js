@@ -10,14 +10,26 @@ function TablePage() {
   ];
 
   const config = [
-    { label: 'Fruit' },
-    { label: 'Color' },
-    { label: 'Score' }
+    {
+      label: 'Name',
+      render: (fruit) => fruit.name
+    },
+    {
+      label: 'Color',
+      render: (fruit) => <div className={`p-3 m-2 ${fruit.color} rounded-full`}></div>
+    },
+    {
+      label: 'Score',
+      render: (fruit) => fruit.score
+    }
   ];
 
+  const keyFn = (fruit) => {
+    return fruit.name;
+  }
   return (
     <div>
-      <Table data={data} config={config} />
+      <Table data={data} config={config} keyFn={keyFn}/>
     </div>
   )
 }
